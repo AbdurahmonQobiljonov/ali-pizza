@@ -10,8 +10,8 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    axios.get('http://localhost:3000/db.json').then(({ data }) => {
-      dispatch(setPizzas(data.pizzas));
+    axios.get('http://localhost:3001/pizzas?_order=desc&_sort=price').then(({ data }) => {
+      dispatch(setPizzas(data));
     });
   }, []);
 
